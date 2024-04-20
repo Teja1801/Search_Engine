@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: "Montserrat", sans-serif; /* Changed font to Montserrat */
+            margin: 0; /* Reset margin */
+            padding: 0;
+            background-color: #f8f9fa; /* Light gray background */
+            color: #333; /* Dark text color */
+        }
+
+        h1 {
+            text-align: center;
+            color: #e63946; /* Watermelon color */
+            font-family: "Oswald", sans-serif; /* Changed font to Oswald */
+            margin-top: 20px; /* Increased margin-top */
+        }
+
+        .results {
+            margin-top: 30px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        li {
+            background-color: #f0f0f0; /* Light gray background */
+            border-radius: 8px; /* Rounded corners */
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            font-family: "Roboto", sans-serif; /* Keep Roboto font for list items */
+        }
+
+        p.no-results {
+            text-align: center;
+            color: #555; /* Dark gray color for no results message */
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results</h1>
+
+    <div class="results">
+        {% if results %}
+            <ul>
+                {% for name in results %}
+                    <li>{{ name }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-results">No results found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
